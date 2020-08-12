@@ -7,68 +7,68 @@ import GenerateButton from './Components/GenerateButton/GenerateButton';
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      artists: [],
-      rankedArtists: [],
-      switchIsLeft: true,
-      switchIsLeftOnClick: true,
-    }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     artists: [],
+  //     rankedArtists: [],
+  //     switchIsLeft: true,
+  //     switchIsLeftOnClick: true,
+  //   }
 
-    this.access_token = fetch('https://accounts.spotify.com/api/token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Basic ' + new Buffer('a7ba8ee5564f45b2a4ab95efbdec61b5:4555730a41614abd89a9bdec6f5f62c7').toString('base64')
-      },
-      body: 'grant_type=client_credentials'
-    })
-      .then(response => response.json())
-      .then(response => response.access_token);
-  }
+  //   this.access_token = fetch('https://accounts.spotify.com/api/token', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded',
+  //       'Authorization': 'Basic ' + new Buffer('a7ba8ee5564f45b2a4ab95efbdec61b5:4555730a41614abd89a9bdec6f5f62c7').toString('base64')
+  //     },
+  //     body: 'grant_type=client_credentials'
+  //   })
+  //     .then(response => response.json())
+  //     .then(response => response.access_token);
+  // }
 
-  onClosing = (artist) => {
-    this.setState(state => {
-      const artists = state.artists.filter((item) => item.name !== artist.name);
+  // onClosing = (artist) => {
+  //   this.setState(state => {
+  //     const artists = state.artists.filter((item) => item.name !== artist.name);
 
-      return {
-        artists,
-      };
-    });
-  }
+  //     return {
+  //       artists,
+  //     };
+  //   });
+  // }
 
-  onSelectArtist = (artist) => {
-    if (!this.state.artists.some(item => item.name === artist.name)) {
-      this.setState(state => {
-        const artists = state.artists.concat(artist);
-        return {
-          artists,
-        };
-      });
-    }
-  };
+  // onSelectArtist = (artist) => {
+  //   if (!this.state.artists.some(item => item.name === artist.name)) {
+  //     this.setState(state => {
+  //       const artists = state.artists.concat(artist);
+  //       return {
+  //         artists,
+  //       };
+  //     });
+  //   }
+  // };
 
-  onButtonClick = () => {
-    let listCopy = [...this.state.artists];
-    this.setState({
-      rankedArtists: listCopy,
-      switchIsLeftOnClick: this.state.switchIsLeft,
-    });
-  }
+  // onButtonClick = () => {
+  //   let listCopy = [...this.state.artists];
+  //   this.setState({
+  //     rankedArtists: listCopy,
+  //     switchIsLeftOnClick: this.state.switchIsLeft,
+  //   });
+  // }
 
-  onSwitchChange = (switchObj) => {
-    if (this.state.switchIsLeft === true) {
-      this.setState({ switchIsLeft: false })
-    } else {
-      this.setState({ switchIsLeft: true })
-    }
-  }
+  // onSwitchChange = (switchObj) => {
+  //   if (this.state.switchIsLeft === true) {
+  //     this.setState({ switchIsLeft: false })
+  //   } else {
+  //     this.setState({ switchIsLeft: true })
+  //   }
+  // }
 
   render() {
     return (
       <div className="App">
-        <div >
+        {/* <div >
           <h1 className='f1'>ARTIST RANKER</h1>
           <h2>Rank your favorite artists based on their Spotify popularity.</h2>
           <AutoCompleteText onSwitchChange={this.onSwitchChange} switchIsLeft={this.state.switchIsLeft} access_token={this.access_token} onSelectArtist={this.onSelectArtist} className='App-Component' />
@@ -84,7 +84,8 @@ class App extends Component {
         </div>
         <footer>
             ©2020 Lucas Ferreira
-        </footer>
+        </footer> */}
+        Hi
       </div>
     );
   }
