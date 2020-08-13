@@ -19,7 +19,7 @@ class ArtistBox extends React.Component {
         let box_class = !this.state.isOn ? 'swing-out-top-bck' : 'puff-in-center';
 
         return (
-            <div className={`${box_class} br2 bg-green mw5 items-center flex white justify-between artist-box`}>
+            <div className={`${box_class} br2 bg-green mw5 overflow-y-auto items-center flex white justify-between artist-box`}>
                 <div style={artist ? artist.images.length>0 ? { background: `url("${artist.images[0].url}") center center no-repeat`, backgroundSize: 'cover' } : {} : {}} className='square-logo bg-white mr2' ></div>
                 <div className='tl truncate overflow-hidden' style={{ flexGrow: "1" }}>
                     {artist ? artist.name : ''}
